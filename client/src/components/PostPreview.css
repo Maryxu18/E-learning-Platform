@@ -1,0 +1,32 @@
+
+
+.postTitle {
+    
+}
+
+
+.postPreview {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    padding: 1em;
+    /* background: #EFD3D3; */
+    border-style: solid;
+    margin-bottom: 45px;
+}
+
+.tags {
+    /* background-color: coral;
+    padding: 1em;
+    border-radius: 5px; */
+    font-style: italic;
+    font-size: small;
+}
+
+.postDescription {
+    font-size: medium;
+}
+
+.postDateTime {
+    font-size: small;
+}

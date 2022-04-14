@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "AfricanImpactChallenge",
+    "slug": "AfricanImpactChallenge",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/favicon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/images/favicon.png"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+
+# Installed node modules
+node_modules/
+
+
+# OS-Specific unnecessary files
+.DS_Store
+thumbs.db
+*:Zone.Identifier
+
+
+# Configuration, including credentials
+.env

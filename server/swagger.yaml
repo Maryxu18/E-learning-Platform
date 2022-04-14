@@ -1,0 +1,1331 @@
+tags:
+  - name: users
+    description: users API
+
+  - name: participant
+    description: Participant API
+
+  - name: mentor
+    description: mentor API
+
+  - name: partner
+    description: partner API
+
+  - name: comment
+    description: comment API
+
+  - name: password
+    description: deliverable API
+
+  - name: deliverable
+    description: deliverable API
+
+  - name: message
+    description: message API
+
+  - name: conversation
+    description: conversation API
+
+  - name: submission
+    description: submission API
+
+
+paths:
+  # [GET] users
+  /users:
+    get:
+      tags:
+        - users
+      summary: Find All Users
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+    # [POST] users
+    post:
+      tags:
+        - users
+      summary: Add User
+      parameters:
+        - name: body
+          in: body
+          description: user Data
+          required: true
+          schema:
+            $ref: "#/definitions/users"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] users/id
+  /users/id:id:
+    get:
+      tags:
+        - users
+      summary: Find User By Id
+      parameters:
+        - name: id
+          in: path
+          description: User Id
+          required: true
+      responses:
+        200:
+          description: "OK"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+    # [PUT] users/id
+    put:
+      tags:
+        - users
+      summary: Update User By Id
+      parameters:
+        - name: id
+          in: path
+          description: user Id
+          required: true
+        - name: body
+          in: body
+          description: user Data
+          required: true
+          schema:
+            $ref: "#/definitions/users"
+      responses:
+        200:
+          description: "OK"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+    # [DELETE] users/id
+    delete:
+      tags:
+        - users
+      summary: Delete User By Id
+      parameters:
+        - name: id
+          in: path
+          description: user Id
+          required: true
+      responses:
+        200:
+          description: "OK"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] participants
+  /participants:
+    get:
+      tags:
+        - participant
+      summary: Find All Participants
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+  # [POST] participants/create-participant-prof/id
+  /participants/create-participant-prof/id:id:
+    post:
+      tags:
+        - participant
+      summary: Create participant profile
+      parameters:
+        - name: body
+          in: body
+          description: participant Data
+          required: true
+          schema:
+            $ref: "#/definitions/participants"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] participants/view-participant-prof/id
+  /participants/view-participant-prof/id:id:
+    get:
+      tags:
+        - participant
+      summary: View participant profile
+      parameters:
+        - name: id
+          in: path
+          description: participant Id
+          required: true
+      responses:
+        200:
+          description: "OK"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [PUT] participants/edit-participant-prof/id
+  /participants/edit-participant-prof/id:id:
+    post:
+      tags:
+        - participant
+      summary: Edit participant profile
+      parameters:
+        - name: body
+          in: body
+          description: participant Data
+          required: true
+          schema:
+            $ref: "#/definitions/participants"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] mentors
+  /mentors:
+    get:
+      tags:
+        - mentor
+      summary: Find All Mentors
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+  # [POST] mentors/create-mentor-prof/id
+  /mentors/create-mentor-prof/id:id:
+    post:
+      tags:
+        - mentor
+      summary: Create mentor profile
+      parameters:
+        - name: body
+          in: body
+          description: mentor Data
+          required: true
+          schema:
+            $ref: "#/definitions/mentors"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] mentors/view-mentor-prof/id
+  /mentors/view-mentor-prof/id:id:
+    get:
+      tags:
+        - mentor
+      summary: View mentor profile
+      parameters:
+        - name: id
+          in: path
+          description: mentor Id
+          required: true
+      responses:
+        200:
+          description: "OK"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [PUT] mentors/edit-mentor-prof/id
+  /mentors/edit-mentor-prof/id:id:
+    post:
+      tags:
+        - mentor
+      summary: Edit mentor profile
+      parameters:
+        - name: body
+          in: body
+          description: mentor Data
+          required: true
+          schema:
+            $ref: "#/definitions/mentors"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] partners
+  /partners:
+    get:
+      tags:
+        - partner
+      summary: Find All Partners
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+  # [POST] partners/create-partner-prof/id
+  /partners/create-partner-prof/id:id:
+    post:
+      tags:
+        - partner
+      summary: Create partner profile
+      parameters:
+        - name: body
+          in: body
+          description: partner Data
+          required: true
+          schema:
+            $ref: "#/definitions/partners"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] partners/view-partner-prof/id
+  /partners/view-partner-prof/id:id:
+    get:
+      tags:
+        - partner
+      summary: View partner profile
+      parameters:
+        - name: id
+          in: path
+          description: partner Id
+          required: true
+      responses:
+        200:
+          description: "OK"
+        409:
+          description: "Conflict"
+        500:
+          description: 'Server Error'
+          
+# [PUT] partners/edit-partner-prof/id
+  /partners/edit-partner-prof/id:id:
+    post:
+      tags:
+        - partner
+      summary: Edit partner profile
+      parameters:
+        - name: body
+          in: body
+          description: partner Data
+          required: true
+          schema:
+            $ref: "#/definitions/partners"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] education/post
+  /education/post:
+    get:
+      tags:
+        - participant
+      summary: Create education post
+      parameters:
+        - name: postUser
+          in: body
+          description: poster ID
+          required: true
+        - name: viewAccess
+          in: body
+          description: access permissions
+          required: true
+        - name: content
+          in: body
+          description: the post content
+          required: true
+        - name: description
+          in: body
+          description: the post description
+          required: true
+        - name: title
+          in: body
+          description: the post title
+          required: true
+        - name: tags
+          in: body
+          description: the post tags
+          required: true
+        - name: contentType
+          in: body
+          description: the type of post content
+          required: true
+        - name: content
+          in: body
+          description: the post content
+          required: true
+          oneOf:
+            - $ref: "#/definitions/textPost"
+            - $ref: "#/definitions/embedPost"
+            - $ref: "#/definitions/mediaPost"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad request"
+        500:
+          description: "Server Error"
+
+
+  # [GET] posts
+  /posts:
+    get:
+      tags:
+        - post
+      summary: Find All Posts
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+  # [GET] post
+  /post/:id:
+    get:
+      tags:
+        - post
+      summary: Find Post by ID
+      parameters:
+        - name: id
+          in: path
+          description: post ID
+          required: true
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+  # [GET] posts by tag
+  /post/tag/:tag:
+    get:
+      tags:
+        - post
+      summary: Find Post by tag
+      parameters:
+        - name: tag
+          in: path
+          description: post tags (one of many)
+          required: true
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+# [POST] forgot-password
+  /forgot-password:
+    post:
+      tags:
+      - password
+      summary: send password reset link to email and create token
+      parameters:
+      - in: body
+        name: email
+        description: user email
+        required: true
+        schema:
+          type: string
+      responses:
+        200:
+          description: 'Success'
+        400:
+          description: 'Bad Request'
+        409:
+          description: 'Conflict'
+        500:
+          description: 'Server Error'
+          
+# [POST] reset-password
+/reset-password/{userId}/{token}:
+  post:
+    tags:
+    - password
+    summary: reset password
+    parameters:
+    - in: path
+      name: userId, token
+      description: user id and token
+      schema:
+        type: string
+    responses:
+      200:
+        description: 'Success'
+      400:
+        description: 'Bad Request'
+      409:
+        description: 'Conflict'
+      500:
+        description: 'Server Error'
+
+# [GET] education/post/comment/:postId
+  /education/post/comment/:postId:
+    get:
+      tags:
+        - comment
+      summary: get all comments from post postId
+      parameters:
+        - in: path
+          name: postId
+          description: post Id
+          schema:
+          type: string
+      responses:
+        200:
+          description: "Success"
+        400:
+          description: "Bad Request"
+        500:
+          description: "Server Error"
+
+# [GET] /comment/:commentId
+/comment/:commentId:
+  get:
+    tags:
+      - comment
+    summary: get comment commentId
+    parameters:
+      - in: path
+        name: commentId
+        description: comment Id
+        schema:
+        type: string
+    responses:
+      200:
+        description: "Success"
+      400:
+        description: "Bad Request"
+      404:
+        description: "Not Found"
+      500:
+        description: "Server Error"
+
+# [POST] /education/post/comment/:postId
+/education/post/comment/:postId:
+  post:
+    tags:
+      - comment
+    summary: create comment for post postId
+    parameters:
+      - name: body
+        in: body
+        description: comment data
+        required: true
+        schema:
+          $ref: "#/definitions/comment"
+      - in: path
+        name: postId
+        description: post Id
+        schema:
+        type: string
+    responses:
+      201:
+        description: "Created"
+      400:
+        description: "Bad Request"
+      404:
+        description: "Not Found"
+      500:
+        description: "Server Error"
+
+  # [DELETE] /comment/:commentId
+  /comment/:commentId:
+    delete:
+      tags:
+        - comment
+      summary: Delete Comment By Id
+      parameters:
+        - name: commentId
+          in: path
+          description: comment Id
+          required: true
+      responses:
+        200:
+          description: "OK"
+        400:
+          description: "Bad Request"
+        404:
+          description: "Not Found"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+
+  # [GET] /deliverable
+/deliverable:
+  get:
+    tags:
+    - deliverable
+    summary: get all deliverables
+    responses:
+      200:
+        description: 'Success'
+      500:
+        description: 'Server Error'
+
+# [GET] /deliverable/:id
+/deliverable/:id:
+  get:
+    tags:
+    - deliverable
+    summary: get deliverable by id
+    parameters:
+    - in: path
+      name: id
+      description: deliverable id
+      schema:
+        type: string
+    responses:
+      200:
+        description: 'Success'
+      400:
+        description: 'Bad Request'
+      404:
+        description: 'Not Found'
+      500:
+        description: 'Server Error'
+
+# [POST] /deliverable/upload
+/deliverable/upload:
+  post:
+    tags:
+    - deliverable
+    summary: create deliverable
+    parameters:
+    - name: body
+      in: body
+      description: deliverable data
+      required: true
+      schema:
+        $ref: "#/definitions/deliverable"
+    responses:
+      200:
+        description: 'Success'
+      400:
+        description: 'Bad Request'
+      500:
+        description: 'Server Error'
+
+  # [GET] company
+  /company:
+    get:
+      tags:
+        - company
+      summary: Find All Companies
+      responses:
+        200:
+          description: "OK"
+        500:
+          description: "Server Error"
+
+  # [POST] company/create/id
+  /company/create/id:id:
+    post:
+      tags:
+        - company
+      summary: Create company profile
+      parameters:
+        - name: body
+          in: body
+          description: company Data
+          required: true
+        - name: id
+          in: path
+          description: User Id
+          required: true
+          schema:
+            $ref: "#/definitions/companys"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [GET] company/id
+  /company/id:compId:
+    get:
+      tags:
+        - company
+      summary: View company profile
+      parameters:
+        - name: id
+          in: path
+          description: company Id
+          required: true
+      responses:
+        200:
+          description: "OK"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+  # [PUT] company/edit/compId/id
+  company/edit/id:compId/id:id:
+    post:
+      tags:
+        - company
+      summary: Edit company profile 
+      parameters:
+        - name: body
+          in: body
+          description: company Data
+          required: true
+        - name: compId
+          in: path
+          description: company Id
+          required: true
+        - name: id
+          in: path
+          description: User Id
+          required: true
+          schema:
+            $ref: "#/definitions/companys"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+# [PUT] company/join/compId/id
+  company/join/id:compId/id:id:
+    post:
+      tags:
+        - company
+      summary: Join company
+      parameters:
+        - name: compId
+          in: path
+          description: company Id
+          required: true
+        - name: id
+          in: path
+          description: User Id
+          required: true
+          schema:
+            $ref: "#/definitions/companys"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+# [PUT] company/leave/compId/id
+  company/leave/id:compId/id:id:
+    post:
+      tags:
+        - company
+      summary: Leave company
+      parameters:
+        - name: compId
+          in: path
+          description: company Id
+          required: true
+        - name: id
+          in: path
+          description: User Id
+          required: true
+          schema:
+            $ref: "#/definitions/companys"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+# [DELETE] company/delete/compId/id
+  company/delete/id:compId/id:id:
+    post:
+      tags:
+        - company
+      summary: Leave company
+      parameters:
+        - name: compId
+          in: path
+          description: company Id
+          required: true
+        - name: id
+          in: path
+          description: User Id
+          required: true
+          schema:
+            $ref: "#/definitions/companys"
+      responses:
+        201:
+          description: "Created"
+        400:
+          description: "Bad Request"
+        409:
+          description: "Conflict"
+        500:
+          description: "Server Error"
+
+
+# [POST] /conversation/create
+/conversation/create:
+  post:
+    tags:
+    - conversation
+    summary: create conversation
+    parameters:
+    - in: body
+      description: conversation data
+      required: true
+      schema:
+        $ref: "#/definitions/conversation"
+    responses:
+      201:
+        description: 'Created'
+      404:
+        description: 'Not Found'
+      500:
+        description: 'Server Error'
+
+# [GET] /conversationUser:id
+/conversationUser:id:
+  get:
+    tags:
+    - conversation
+    summary: get all conversation of user id
+    parameters:
+    - name: id
+      in: path
+      description: user id
+      required: true
+    responses:
+      200:
+        description: 'Success'
+      404:
+        description: 'Not Found'
+      500:
+        description: 'Server Error'
+
+# [GET] /conversation:id
+/conversation:id:
+  get:
+    tags:
+    - conversation
+    - message
+    summary: get all message of conversation
+    parameters:
+    - name: id
+      in: path
+      description: conversation id
+      required: true
+    responses:
+      200:
+        description: 'Success'
+      400:
+        description: 'Bad Request'
+      404:
+        description: 'Not Found'
+      500:
+        description: 'Server Error'
+
+# [POST] /conversation:id/message
+/conversation:id/message:
+  post:
+    tags:
+    - conversation
+    - message
+    summary: create message in a conversation
+    parameters:
+    - name: body
+      in: body
+      description: message data
+      required: true
+      schema:
+        $ref: "#/definitions/message"
+    responses:
+      201:
+        description: 'Created'
+      400:
+        description: 'Bad Request'
+      404:
+        description: 'Not Found'
+      500:
+        description: 'Server Error'
+
+# [POST] /conversation:id/addUser
+/conversation:id/addUser:
+  post:
+    tags:
+    - conversation
+    summary: add user to conversation
+    parameters:
+    - name: userId
+      in: body
+      description: add userid to conversation id
+      required: true
+    responses:
+      201:
+        description: 'Created'
+      400:
+        description: 'Bad Request'
+      404:
+        description: 'Not Found'
+      500:
+        description: 'Server Error'
+
+# [DELETE] /conversation:id
+/conversation:id:
+  delete:
+    tags:
+    - conversation
+    - message
+    summary: delete conversation and all its messages
+    parameters:
+    - name: id
+      in: path
+      description: conversation id
+      required: true
+    responses:
+      200:
+        description: 'Success'
+      404:
+        description: 'Not Found'
+      500:
+        description: 'Server Error'
+
+# [POST] deliverable:id/submit
+  /deliverable:id/submit:
+    post:
+      tags:
+        - deliverable
+        - submission
+      summary: submit a deliverable
+      parameters:
+        - in: body
+          description: submission Data
+          required: true
+          schema:
+            $ref: "#/definitions/submission"
+        - name: id
+          in: path
+          description: delievrable Id
+          required: true
+      responses:
+        201:
+          description: "Created"
+        404:
+          description: "Not Found"
+        500:
+          description: "Server Error"
+
+# [PUT] /submission:id
+  /submission:id:
+    put:
+      tags:
+        - submission
+      summary: grade submission
+      parameters:
+        - name: id
+          in: path
+          description: submission Id
+          required: true
+        - name: grade
+          in: body
+          description: grade of submission
+          required: true
+        - name: feedback
+          in: body
+          description: feedback of submission
+          required: true
+        - name: graderId
+          in: body
+          description: userId of user who graded submission
+          required: true
+      responses:
+        200:
+          description: "Success"
+        404:
+          description: "Not Found"
+        500:
+          description: "Server Error"
+
+# [GET] /submission:id
+  /submission:id:
+    get:
+      tags:
+        - submission
+      summary: get submission by id
+      parameters:
+        - name: id
+          in: path
+          description: submission id
+          required: true
+      responses:
+        200:
+          description: "Success"
+        404:
+          description: "Not Found"
+        500:
+          description: "Server Error"
+
+# [GET] /all-submissions
+  /all-submissions:
+    get:
+      tags:
+        - submission
+      summary: get all submissions
+      responses:
+        200:
+          description: "Success"
+        500:
+          description: "Server Error"
+
+# [GET] /download/submission:id
+  /download/submission:id:
+    get:
+      tags:
+        - submission
+      summary: download file of submission
+      parameters:
+        - name: id
+          in: path
+          description: submission id
+          required: true
+      responses:
+        200:
+          description: "Success"
+        404:
+          description: "Not Found"
+        500:
+          description: "Server Error"
+
+# [GET] /deliverable:id/submissions
+  /deliverable:id/submissions:
+    get:
+      tags:
+        - submission
+      summary: get all submissions of a deliverable
+      parameters:
+        - name: id
+          in: path
+          description: deliverable id
+          required: true
+      responses:
+        200:
+          description: "Success"
+        404:
+          description: "Not Found"
+        500:
+          description: "Server Error"
+
+# definitions
+definitions:
+  userLogin:
+    type: object
+    required:
+      - email
+      - password
+    properties:
+      id:
+        description: user Id
+      email:
+        type: string
+        description: user Email
+      password:
+        type: string
+        description: user Password
+
+  participant:
+    type: object
+    required:
+      - userID
+      - aboutMe
+      - professionalBackground
+      - skills
+      - companyName
+      - companyDescription
+    properties:
+      id:
+        description: participant Id
+      userID:
+        type: string
+        description: user Id
+      aboutMe:
+        type: string
+        description: participant 'about me' description
+      professionalBackground:
+        type: string
+        description: participants professional background
+      skills:
+        type: string
+        description: All participants skills
+      companyName:
+        type: string
+        description: participant company name
+      companyDescription:
+        type: string
+        description: Description of participants company
+
+  mentor:
+    type: object
+    required:
+      - userID
+      - aboutMe
+      - professionalBackground
+      - skills
+      - companyName
+      - companyDescription
+    properties:
+      id:
+        description: mentor Id
+      userID:
+        type: string
+        description: user Id
+      aboutMe:
+        type: string
+        description: mentor 'about me' description
+      professionalBackground:
+        type: string
+        description: mentors professional background
+      skills:
+        type: string
+        description: All mentors skills
+      companyName:
+        type: string
+        description: participant company name
+      companyDescription:
+        type: string
+        description: Description of mentors company
+
+  partner:
+    type: object
+    required:
+      - userID
+      - aboutMe
+      - professionalBackground
+      - skills
+      - companyName
+      - companyDescription
+    properties:
+      id:
+        description: partner Id
+      userID:
+        type: string
+        description: user Id
+      aboutMe:
+        type: string
+        description: partner 'about me' description
+      professionalBackground:
+        type: string
+        description: partners professional background
+      skills:
+        type: string
+        description: All partners skills
+      companyName:
+        type: string
+        description: partners company name
+      companyDescription:
+        type: string
+        description: Description of partners company
+
+  textPost:
+    type: object
+    required: content
+    properties:
+      text:
+        description: text content
+        type: string
+  embedPost:
+    type: object
+    required: content
+    properties:
+      URL:
+        description: Embed URL
+        type: string
+  mediaPost:
+    type: object
+    required: content
+    properties:
+      mediaId:
+        description: ID of media object
+        type: string
+
+  token:
+    type: object
+    required:
+        - userId
+        - token
+        - createdAt
+    properties:
+      userId:
+        description: user Id
+      token:
+        type: string
+        description: reset password token
+      createdAt:
+        type: Date
+        description: date of token creation
+
+  comment:
+    type: object
+    properties:
+      userId:
+        description: user Id
+      content:
+        type: string
+        description: content of comment
+
+  deliverable:
+    type: object
+    required:
+      - dueDate
+      - title
+      - description
+    properties:
+      createdDate:
+        type: date
+        description: date of when deliverable was created
+      dueDate:
+        type: date
+        description: date when deliverable is due
+      title:
+        type: string
+        description: title of deliverable
+      description: 
+        type: string
+        description: description of deliverable
+
+company:
+    type: object
+    required:
+      - companyName
+      - website
+      - industry
+      - companyType
+      - aboutUs
+      - specialties
+      - users
+    properties:
+      id:
+        description: company Id
+      companyName:
+        type: string
+        description: company name
+      website:
+        type: string
+        description: company website
+      industry:
+        type: string
+        description: company's industry
+      companyType:
+        type: string
+        description: company type
+      aboutUs:
+        type: string
+        description: about the company
+      specialties:
+        type: string
+        description: company's specialties
+      users:
+        type: User[]
+        description: members of the company
+
+
+  message:
+    type: object
+    required:
+      - conversationId
+      - userId
+      - message
+    properties:
+      date:
+        type: date
+        description: date of when message was created
+      conversationId:
+        type: string
+        description: id of conversation that message belongs to
+      userId:
+        type: string
+        description: id of sender of message
+      message: 
+        type: string
+        description: content of message
+
+  conversation:
+    type: object
+    required:
+      - members
+    properties:
+      members:
+        type: array
+        description: array of of users belonging in the conversation
+      lastMessage:
+        type: string
+        description: content of last message of conversation
+    
+  submission:
+    type: object
+    properties:
+      companyId:
+        description: company Id
+      file:
+        description: submission file
+
+
+schemes:
+  - http

@@ -1,0 +1,5 @@
+
+
+
+# expect pass
+curl.exe -F title=test -F type=VIDEO -F uploadUser=60c4062e8f2618b6238808a0 -F viewAccess=ANYONE -F fileUpload=@min.txt -F tags=a,b,c http://localhost:3000/education/upload

@@ -1,0 +1,61 @@
+{
+  "name": "project-agilecats",
+  "version": "0.0.0",
+  "description": "This project contains a platform for the African Impact Challenge. The platform includes a central place for participants to connect with mentors, work with their team, ask questions, and learn.",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start-server": "(cd server && npm run dev)",
+    "start-client": "(cd client && npm run start)",
+    "start": "npm run start-server & npm run start-client",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install",
+    "lint-server": "(cd server && eslint --ignore-path .gitignore --ext .ts,.tsx,.js,.jsx --fix src/)",
+    "lint-client": "(cd client && eslint --ignore-path .gitignore --ext .ts,.tsx,.js,.jsx --fix src/)",
+    "lint-common": "(cd common && eslint --ext .ts,.tsx,.js,.jsx --fix .)",
+    "lint": "npm run lint-server; npm run lint-client; npm run lint-common"
+  },
+  "lint-staged": {
+    "(server|client)/src/**/*.[jt]s?(x)": [
+      "eslint --fix"
+    ],
+    "common/**/*.[jt]s?(x)": [
+      "eslint --fix"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UTSCCSCC01/project-agilecats.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UTSCCSCC01/project-agilecats/issues"
+  },
+  "homepage": "https://github.com/UTSCCSCC01/project-agilecats#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "react-native-document-picker": "^5.2.0",
+    "react-native-item-select": "^0.3.0",
+    "typeface-titillium-web": "^1.1.13",
+    "typescript": "^4.3.2"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "commitlint-config-jira": "^1.5.1",
+    "commitlint-plugin-jira-rules": "^1.5.1",
+    "eslint": "^7.27.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-only-warn": "^1.0.2",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "prettier": "^2.3.0"
+  }
+}

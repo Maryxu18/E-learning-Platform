@@ -1,0 +1,45 @@
+
+
+.postTitle {
+    text-align: left;
+}
+
+
+.postPreview {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    /* background: #EFD3D3; */
+    border-radius: 20px;
+    border-color: "#EFAA82";
+    text-align: left;
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.tags {
+    /* background-color: coral;
+    padding: 1em;
+    border-radius: 5px; */
+    font-style: italic;
+    font-size: small;
+    text-align: left;
+}
+
+.postDescription {
+    font-size: medium;
+    text-align: left;
+}
+
+.postDateTime {
+    font-size: small;
+    text-align: left;
+}
+
+.createPost input {
+    background-color: white;
+    border-radius: 50px;
+    padding: 10px;
+    width: 400px;
+    margin: 10px;    
+}

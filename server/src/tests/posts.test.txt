@@ -1,0 +1,45 @@
+
+# Invoke-WebRequest === curl
+
+# expect fail: no content
+curl http://localhost:3000/education/post -Body '{"description":"desc", "viewAccess":"ANYONE","postUser":"60bab2e80324f70741677d27","title":"testPost", "contentType":"TEXT","tags":"[\"test tag\"]"}' -Method POST -ContentType 'application/json'
+
+# expect fail: invalid content
+curl http://localhost:3000/education/post -Body '{"description":"desc", "viewAccess":"ANYONE","postUser":"60bab2e80324f70741677d27","title":"testPost", "contentType":"TEXT","tags":"[\"test tag\"]","content":{}}' -Method POST -ContentType 'application/json'
+
+# expect pass
+curl http://localhost:3000/education/post -Body '{"description":"desc", "viewAccess":"ANYONE","postUser":"60bab2e80324f70741677d27","title":"testPost", "contentType":"TEXT","tags":"[\"test tag\"]","content":{"text":"123"}}' -Method POST -ContentType 'application/json'
+
+# expect fail: invalid content type
+curl http://localhost:3000/education/post -Body '{"description":"desc", "viewAccess":"ANYONE","postUser":"60bab2e80324f70741677d27","title":"testPost", "contentType":"XD","tags":"[\"test tag\"]","content":{"text":"123"}}' -Method POST -ContentType 'application/json'
+
+# expect fail: not implemented content type
+curl http://localhost:3000/education/post -Body '{"description":"desc", "viewAccess":"ANYONE","postUser":"60bab2e80324f70741677d27","title":"testPost", "contentType":"VIDEO","tags":"[\"test tag\"]","content":{"text":"123"}}' -Method POST -ContentType 'application/json'
+
+
+# Unix curl - expect pass
+curl http://localhost:3000/education/post -F description=sample-desc -F viewAccess=ANYONE -F postUser=60bab2e80324f70741677d27 -F title=DemoTestPost -F contentType=TEXT -F "tags=[\"test tag\"] -F content":{"text":"123"}} -ContentType 'application/json'
+
+# expect pass
+curl http://localhost:3000/education/post | select -ExpandProperty Content
+
+# expect pass
+curl http://localhost:3000/education/post/60de9123f614490bcef79e24
+
+
+
+
+
+
+
+
+
+# Test Searching by tag. Use Unix curl.
+
+# expect {"data":[],"message":"findByTag"}
+curl http://localhost:3000/education/post/tag/test%20tasdftyj
+
+
+# expect many results (pass)
+curl http://localhost:3000/education/post/tag/test%20tag
+

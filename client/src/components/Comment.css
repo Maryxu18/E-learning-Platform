@@ -1,0 +1,16 @@
+
+
+
+.commentPostedBy {
+    font-size: small;
+    width:30%;
+}
+.commentPostedAt {
+    font-size: small;
+    width:30%;
+    font-style: italic;
+}
+
+.commentContent {
+    font-size: medium;
+}

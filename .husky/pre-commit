@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged
+# inefficient, but as far as I can tell, there is no way to print warnings from lint-staged
+npm run lint-client
+npm run lint-server

@@ -1,0 +1,11 @@
+{
+    "env": "sample",
+    "dbConfig": {
+        "host": "host.example.com",
+        "port_or_auto_prefix": "27017",
+        "database": "mongoose",
+        "user": "username",
+        "passwd": "password"
+    },
+    "secretKey": "privateKey"
+}

@@ -1,0 +1,308 @@
+{
+	"info": {
+		"_postman_id": "c8c026f4-2bbb-4f49-944a-c6eb5d472339",
+		"name": "Agilecats",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "localhost:3000/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"ken@example.com\",\n    \"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"hello@yahoo.com\",\n    \"password\": \"123\",\n    \"firstName\": \"hello\",\n    \"lastName\": \"world\",\n    \"role\": \"participant\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/mentors/create-prof",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\":\"Jezz\",\n    \"lastName\":\"Checkin\",\n  \"aboutMe\": \"Lion\",\n  \"proBackground\": \"I am a tiger developer\",\n  \"skills\": \"Java, python and more\",\n  \"companyName\": \"LION.com\",\n  \"companyDescription\": \"Say hello to kenneth\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/mentors/edit-mentor-prof/id60dc4cc1b81a4d7ec2ab7603",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"mentors",
+						"edit-mentor-prof",
+						"id60dc4cc1b81a4d7ec2ab7603"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/mentors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/users/mentors",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"mentors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/edit-participant-prof",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"kennyyyyy\",\n    \"lastName\": \"jeffreyyy\",\n    \"password\": \"123456\",\n    \"aboutMe\": \"Hey childdddd\",\n    \"proBackground\":\"NFL player\",\n    \"skills\":\"Hulk strength\",\n    \"companyName\":\"NFL\",\n    \"companyDescription\": \"Strength\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/participants/edit-participant-prof/id60dc35633c03f07cb5678b6c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participants",
+						"edit-participant-prof",
+						"id60dc35633c03f07cb5678b6c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/id60c4062e8f2618b6238808a0",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"kdruxxy\",\n    \"role\": \"partner\",\n    \"password\": \"123\"\n\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/id60ba94468f26f7334eb622be",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"id60ba94468f26f7334eb622be"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/participants/edit-participant-prof/id60dc35633c03f07cb5678b6c",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"Koolai\",\n    \"lastName\": \"Ken\",\n    \"aboutMe\": \"Hi there\",\n    \"proBackground\":\"NTA player\",\n    \"skills\":\"Strength\",\n    \"companyName\":\"NTA\",\n    \"companyDescription\": \"chill\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/participants/edit-participant-prof/id60dc35633c03f07cb5678b6c",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"participants",
+						"edit-participant-prof",
+						"id60dc35633c03f07cb5678b6c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/partners/create-partner-prof/id60dc39d352aff17d0fbba933",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \n    \"firstName\":\"TestingtheAZA\",\n  \"aboutMe\": \"relaxxx\",\n  \"proBackground\": \"I am a software developer\",\n  \"skills\": \"Java, python and more\",\n  \"companyName\": \"kenneth.com\",\n  \"companyDescription\": \"Say hello to kenneth\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/partners/edit-partner-prof/id60dc47ec306f8d7e1ed0d23a",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"partners",
+						"edit-partner-prof",
+						"id60dc47ec306f8d7e1ed0d23a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"google@yahoo.com\",\n    \"password\": \"123\",\n    \"firstName\": \"google\",\n    \"lastName\": \"google\",\n    \"role\": \"participant\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/participants/view-participant-prof/id60dc35633c03f07cb5678b6c",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/partners/view-partner-prof/id60dc47ec306f8d7e1ed0d23a",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"partners",
+						"view-partner-prof",
+						"id60dc47ec306f8d7e1ed0d23a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3000/users/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/users/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
